@@ -13,7 +13,7 @@ window.onload = function() {
         game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
-        player = game.add.sprite(200, game.world.height - 90, 'dude');
+        player = game.add.sprite(200, game.world.height - 90, 'player');
         game.physics.arcade.enable(player);
         player.animations.add('left', [0, 1, 2, 3], 10, true);
         player.animations.add('right', [5, 6, 7, 8], 10, true);
