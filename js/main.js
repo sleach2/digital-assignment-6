@@ -12,7 +12,8 @@ window.onload = function() {
     var player;
     var cursors;
     var music;
-    
+    var enmove=150;
+
     function create() {
         music=game.add.audio('bks');
         music.play('',0,0.5,true);
