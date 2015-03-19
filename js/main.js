@@ -6,12 +6,17 @@ window.onload = function() {
     function preload() {
         game.load.spritesheet( 'player', 'assets/dude.png', 32, 48 );
         game.load.image( 'dirt', 'assets/dirt.png' );
+        game.load.audio('bks','assets/eerie.mp3');
     }
     
     var player;
     var cursors;
+    var music;
     
     function create() {
+        music=game.add.audio('bks');
+        music.play('',0,0.5,true);
+
         game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.add.tileSprite(0,0,2000,2000,'dirt');
@@ -20,6 +25,7 @@ window.onload = function() {
         game.physics.arcade.enable(player);
         player.animations.add('left', [0, 1, 2, 3], 10, true);
         player.animations.add('right', [5, 6, 7, 8], 10, true);
+        player.body.collideWorldBounds = true;
 
         cursors = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
