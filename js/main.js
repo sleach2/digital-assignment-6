@@ -5,6 +5,7 @@ window.onload = function() {
     
     function preload() {
         game.load.spritesheet( 'player', 'assets/dude.png', 32, 48 );
+        game.load.image( 'dirt', 'assets/dirt.png' );
     }
     
     var player;
@@ -13,6 +14,7 @@ window.onload = function() {
     function create() {
         game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
+        game.add.tileSprite(0,0,2000,2000,'dirt');
 
         player = game.add.sprite(0, 0, 'player');
         game.physics.arcade.enable(player);
