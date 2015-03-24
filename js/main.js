@@ -20,11 +20,10 @@ window.onload = function() {
         music=game.add.audio('bks');
         music.play('',0,0.5,true);
 
-        bkg=game.add.tileSprite(0,0,2000,2000,'city'); 
-
         game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        game.add.tileSprite(0,0,2000,2000,'dirt');
+        //game.add.tileSprite(0,0,2000,2000,'dirt');
+        bkg=game.add.tileSprite(0,0,2000,2000,'city');
 
         player = game.add.sprite(0, 0, 'player');
         game.physics.arcade.enable(player);
