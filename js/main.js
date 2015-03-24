@@ -7,16 +7,20 @@ window.onload = function() {
         game.load.spritesheet( 'player', 'assets/dude.png', 32, 48 );
         game.load.image( 'dirt', 'assets/dirt.png' );
         game.load.audio('bks','assets/eerie.mp3');
+        game.load.image('city', 'assets/city.png');
     }
     
     var player;
     var cursors;
     var music;
     var enmove=150;
+    varbkg;
 
     function create() {
         music=game.add.audio('bks');
         music.play('',0,0.5,true);
+
+        bkg=game.add.tileSprite(0,0,2000,2000,'city'); 
 
         game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
