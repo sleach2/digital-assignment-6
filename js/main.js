@@ -37,7 +37,7 @@ window.onload = function() {
         platforms = game.add.group(); 
         platforms.enableBody = true; 
         var ground = platforms.create(0, game.world.height - 64, 'ground'); 
-        ground.scale.setTo(2, 2); 
+        ground.scale.setTo(20, 2); 
         ground.body.immovable = true;
 
         cursors = game.input.keyboard.createCursorKeys();
