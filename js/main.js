@@ -28,7 +28,7 @@ window.onload = function() {
         //game.add.tileSprite(0,0,2000,2000,'dirt');
         bkg=game.add.tileSprite(0,0,2000,2000,'sky');
 
-        player = game.add.sprite(0, game.world.height-100, 'player');
+        player = game.add.sprite(0, game.world.height-300, 'player');
         game.physics.arcade.enable(player);
         player.animations.add('left', [0, 1, 2, 3], 10, true);
         player.animations.add('right', [5, 6, 7, 8], 10, true);
