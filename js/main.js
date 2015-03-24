@@ -8,6 +8,8 @@ window.onload = function() {
         game.load.image( 'dirt', 'assets/dirt.png' );
         game.load.audio('bks','assets/eerie.mp3');
         game.load.image('city', 'assets/city.png');
+        game.load.image('ground', 'assets/platform.png');
+        game.load.image('sky', 'assets/sky.png');
     }
     
     var player;
@@ -15,6 +17,7 @@ window.onload = function() {
     var music;
     var enmove=150;
     var bkg;
+    var platforms;
 
     function create() {
         music=game.add.audio('bks');
@@ -23,7 +26,7 @@ window.onload = function() {
         game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //game.add.tileSprite(0,0,2000,2000,'dirt');
-        bkg=game.add.tileSprite(0,0,2000,2000,'city');
+        bkg=game.add.tileSprite(0,0,2000,2000,'sky');
 
         player = game.add.sprite(0, 0, 'player');
         game.physics.arcade.enable(player);
@@ -31,11 +34,18 @@ window.onload = function() {
         player.animations.add('right', [5, 6, 7, 8], 10, true);
         player.body.collideWorldBounds = true;
 
+        platforms = game.add.group(); 
+        platforms.enableBody = true; 
+        var ground = platforms.create(0, game.world.height - 64, 'ground'); 
+        ground.scale.setTo(2, 2); 
+        ground.body.immovable = true;
+
         cursors = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
     }
     
     function update() {
+        game.physics.arcade.collide(player, platforms);
         player.body.velocity.x=0;
         player.body.velocity.y=350;
         if (cursors.left.isDown){
