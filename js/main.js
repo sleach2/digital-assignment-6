@@ -9,7 +9,7 @@ window.onload = function() {
         game.load.audio('bks','assets/eerie.mp3');
         game.load.image('city', 'assets/city.png');
         game.load.image('ground', 'assets/platform.png');
-        game.load.image('sky', 'assets/sky.png');
+        game.load.image('sky', 'assets/bhg.jpg');
     }
     
     var player;
@@ -26,7 +26,7 @@ window.onload = function() {
         game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //game.add.tileSprite(0,0,2000,2000,'dirt');
-        bkg=game.add.tileSprite(0,0,2000,2000,'city');
+        bkg=game.add.tileSprite(0,0,2000,2000,'sky');
 
         player = game.add.sprite(0, game.world.height-130, 'player');
         game.physics.arcade.enable(player);
