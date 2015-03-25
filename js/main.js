@@ -18,6 +18,7 @@ window.onload = function() {
     var enmove=150;
     var bkg;
     var platforms;
+    var timer, timerEvent, tim;
 
     function create() {
         music=game.add.audio('bks');
@@ -43,6 +44,16 @@ window.onload = function() {
 
         cursors = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
+
+        timer = game.time.create(false);
+        //timer.loop(300000, end, this);
+        timer.loop(500, end, this);
+    }
+
+    function end(){
+        timer.stop()
+        game.add.text(player.body.x,player.body.y-300, 'Game Over', { fontSize: '64px', fill: '#000' });
+        game.input.disabled=true;
     }
     
     function update() {
