@@ -26,7 +26,7 @@ window.onload = function() {
         game.world.setBounds(0,0,2000,2000);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         //game.add.tileSprite(0,0,2000,2000,'dirt');
-        bkg=game.add.tileSprite(0,0,2000,2000,'sky');
+        bkg=game.add.tileSprite(0,0,2000,2000,'city');
 
         player = game.add.sprite(0, game.world.height-130, 'player');
         game.physics.arcade.enable(player);
